@@ -34,7 +34,7 @@ func TestExactMatch(t *testing.T) {
 		{0, 1.0, "This is Blue", "This is Blue"},
 		{0, 1.0, "This is another Color", "This is another Color"},
 		{0, 1.0, "colors are really great", "colors are really great"},
-		{0, 1.0, "the quick brown fox jumped", "the quick brown fox jumped"},
+		{0, 1.0, "the quick brown fox jumps", "the quick brown fox jumps"},
 	}
 	runWerTests(t, testData)
 }
@@ -52,6 +52,9 @@ func TestWERVariations(t *testing.T) {
 		{1, 0.0, "Blue is a Color", "Blue is a color"},
 		{2, -1.0, "Blue is a Color", "blue is a color"},
 		{4, -3.0, "Blue is a Color", "BLUE IS A COLOR"},
+
+		// punctuation
+		{2, -1.0, "What is the time?", "What's the time?"},
 
 		// inserts
 		{0, 1.0, "token", "token"},
