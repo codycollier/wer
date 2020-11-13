@@ -44,7 +44,7 @@ func WER(reference, candidate []string) (int, float64) {
 	// calculation
 	for i := 1; i <= lr; i++ {
 		for j := 1; j <= lc; j++ {
-			if reference[i] == candidate[j] {
+			if reference[i-1] == candidate[j-1] {
 				D[i][j] = D[i-1][j-1]
 			} else {
 				sub := D[i-1][j-1] + 1
