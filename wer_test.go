@@ -1,6 +1,7 @@
 package wer_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -23,7 +24,9 @@ func TestWerWaccExactMatchWithCase(t *testing.T) {
 	}
 
 	for _, wt := range testData {
-		wer, wacc := wer.WER(wt.reference, wt.candidate)
+		reference := strings.Split(wt.reference, "")
+		candidate := strings.Split(wt.candidate, "")
+		wer, wacc := wer.WER(reference, candidate)
 		assert.Equal(t, wer, wt.werExpected)
 		assert.Equal(t, wacc, wt.waccExpected)
 	}
