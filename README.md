@@ -52,6 +52,6 @@ func main() {
 [host]$ go run example/example.go
 reference: [the quick brown fox jumps over the lazy dog]
 candidate: [the slow grey snail jumps over the lazy cat]
-word error rate: 4
-word accuracy: -3
+word error rate: 0.4444444444444444
+word accuracy: 0.5555555555555556
 ```
