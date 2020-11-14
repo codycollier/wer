@@ -19,7 +19,7 @@ func minTrio(a, b, c int) int {
 }
 
 // Return word error rate and word accuracy for (reference, candidate)
-func WER(reference, candidate []string) (int, float64) {
+func WER(reference, candidate []string) (float64, float64) {
 
 	lr := len(reference)
 	lc := len(candidate)
@@ -55,7 +55,7 @@ func WER(reference, candidate []string) (int, float64) {
 		}
 	}
 
-	wer := D[lr][lc]
+	wer := float64(D[lr][lc]) / float64(lr)
 	wacc := 1.0 - float64(wer)
 
 	return wer, wacc
